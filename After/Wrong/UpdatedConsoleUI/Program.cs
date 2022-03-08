@@ -1,6 +1,6 @@
-﻿using Library;
+﻿using UpdatedLibrary;
 
-namespace ConsoleUI;
+namespace UpdatedConsoleUI;
 
 internal static class Program
 {
@@ -9,8 +9,8 @@ internal static class Program
         var applicants = new List<PersonModel>
         {
             new PersonModel {FirstName = "Fares", LastName = "Steen"},
-            new PersonModel {FirstName = "Fadi", LastName = "Saibah"},
-            new PersonModel {FirstName = "Wassem", LastName = "Daher"}
+            new PersonModel {FirstName = "Fadi", LastName = "Saibah", TypeOfEmployee = EmployeeType.Manager},
+            new PersonModel {FirstName = "Wassem", LastName = "Daher",TypeOfEmployee = EmployeeType.Executive}
         };
 
         var employees = new List<EmployeeModel>();
@@ -25,7 +25,7 @@ internal static class Program
 
         foreach (var emp in employees)
         {
-            Console.WriteLine($"{emp.FirstName} {emp.LastName}: {emp.EmailAddress}");
+            Console.WriteLine($"{emp.FirstName} {emp.LastName}: {emp.EmailAddress} IsManager: {emp.IsManager} IsExecutive: {emp.IsExecutive}");
         }
 
         Console.ReadLine();
